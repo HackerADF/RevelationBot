@@ -186,9 +186,17 @@ class TicketView(discord.ui.View):
                                   colour=0xae00ff)
             await channel.send(embed=embed)
         elif reason.lower() == "become a member":
-            embed = discord.Embed(title="Please wait for someone to handle your ticket.",
-                                  description=f"**What is your Minecraft IGN**?\n{answers['name']}\n\n**Why do you want to join Revelation?**?\n{answers['why']}\n\n**What tier are you?\n{answers['tier'] if answers['tier'] else "Not Tested."}\n\n**What servers do you play on?**?\n{answers['servers']}\n\n**Any additional info?\n{answers['additional']}",
-                                  colour=0xae00ff)
+            embed = discord.Embed(
+                title="Please wait for someone to handle your ticket.",
+                description=(
+                    f"**What is your Minecraft IGN?**\n{answers['name']}\n\n"
+                    f"**Why do you want to join Revelation?**\n{answers['why']}\n\n"
+                    f"**What tier are you?**\n{answers['tier'] if answers['tier'] else 'Not Tested.'}\n\n"
+                    f"**What servers do you play on?**\n{answers['servers']}\n\n"
+                    f"**Any additional info?**\n{answers['additional']}"
+                ),
+                colour=0xae00ff
+            )
             await channel.send(embed=embed)
         else:
             return
