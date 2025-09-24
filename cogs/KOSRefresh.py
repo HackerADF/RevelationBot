@@ -45,7 +45,7 @@ class KOSRefresher(commands.Cog):
                 )
                 embed.add_field(name="Usernames", value=username, inline=True)
                 embed.add_field(name="Reason", value=reason, inline=True)
-                embed.add_field(name="Date", value=f"<f:{timestamp}:F>", inline=True)
+                embed.add_field(name="Date", value=f"<t:{timestamp}:F>", inline=True)
                 embed.set_thumbnail(url=f"https://mineskin.eu/helm/{username}/100.png")
 
                 new_msg = await channel.send(embed=embed)
